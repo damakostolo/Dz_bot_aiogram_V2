@@ -1,11 +1,11 @@
 @echo off
 
-call %~dp0telegram_bot\venv\Scripts\activate
+call %~dp0Dz_bot\venv\Scripts\activate
 
-cd %~dp0telegram_bot
+cd %~dp0Dz_bot
 
 set TOKEN=6476647584:AAHGHKAHRVudthCWaMmO3vg6AvtMYPMHtoA
 
-python bot_pizza.py 
+python bot_telegram.py 
 
 pause
