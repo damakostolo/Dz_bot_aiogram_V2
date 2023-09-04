@@ -32,6 +32,14 @@ async def message_question (message: types.Message):
 async def message_classroom (message: types.Message):
     await bot.send_message(message.from_user.id, ('Введение классрума от 4000гр/мес '))
 
+# @dp.message_handler(commands=['/Введение_классрум'])
+async def message_other (message: types.Message):
+    await bot.send_message(message.from_user.id, ('Любая работа выполняеться от 100 гривен , дальше чам сложнее тем больше беру '))
+
+# @dp.message_handler(commands=['/Введение_классрум'])
+async def message_back (message: types.Message):
+    await bot.send_message(message.from_user.id, ('Привет! Выбери пункт ниже'), reply_markup=kb_client )
+
 def registe_handlers_client(dp: Dispatcher):
     dp.register_message_handler(start_message , commands=['start', 'help'])
     dp.register_message_handler(message_price, commands=['Стоимость_работы'] )
@@ -40,4 +48,5 @@ def registe_handlers_client(dp: Dispatcher):
     dp.register_message_handler(message_reviews, commands=['Отзывы'])
     dp.register_message_handler(message_question, commands=['Другой_вопрос'] )
     dp.register_message_handler(message_classroom, commands=['Введение_классрум'])
-    # dp.register_message_handler(message_other , commands=['Другое']) 
+    dp.register_message_handler(message_other , commands=['Другое']) 
+    dp.register_message_handler(message_back , commands=['Back'])
