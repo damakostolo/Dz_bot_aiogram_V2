@@ -2,6 +2,8 @@ from aiogram import types , Dispatcher
 from create_bot import dp , bot
 from kerbords import kb_client , kb_price
 from data_base import sqli_bd
+from aiogram.types import InlineKeyboardButton , InlineKeyboardMarkup
+
 
 
 # @dp.message_handler(commands=['start', 'help'])
@@ -19,11 +21,13 @@ async def message_work_time (message: types.Message):
 
 # @dp.message_handler(commands=['/Заказать'])
 async def message_order (message: types.Message):
-    await bot.send_message(message.from_user.id, ('Написать мне : '), )
+    await bot.send_message(message.from_user.id, ('Написать мне : '), reply_markup=InlineKeyboardMarkup().\
+                                   add(InlineKeyboardButton('Тык' , url='https://t.me/DamaKostolol')))
 
 # @dp.message_handler(commands=['/Отзывы'])
 async def message_reviews (message: types.Message):
-    await bot.send_message(message.from_user.id, ('Чат группа: '))
+    await bot.send_message(message.from_user.id, ('Чат группа: ' ), reply_markup=InlineKeyboardMarkup().\
+                                   add(InlineKeyboardButton('Тык' , url='https://t.me/+C0iOcn1q76QyNmYy')))
 
 # @dp.message_handler(commands=['/Другой_вопрос'])
 async def message_question (message: types.Message):
