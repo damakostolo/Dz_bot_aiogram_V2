@@ -12,6 +12,9 @@ async def echo_send(message: types.Message):
             .intersection(set(json.load(open('cenz.json')))):
         await message.reply('No mat')
         await message.delete()
+    else :
+        await message.reply('Нет такой команды напишите /help ')
+        await message.delete()
 
 def registe_handlers_other (dp: Dispatcher):
     dp.register_message_handler(echo_send)
