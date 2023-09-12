@@ -31,7 +31,8 @@ async def message_reviews (message: types.Message):
 
 # @dp.message_handler(commands=['/Другой_вопрос'])
 async def message_question (message: types.Message):
-    await bot.send_message(message.from_user.id, ('Написать мене : '))
+    await bot.send_message(message.from_user.id, ('Написать мене : '), reply_markup=InlineKeyboardMarkup().\
+                                   add(InlineKeyboardButton('Тык' , url='https://t.me/DamaKostolol')))
 
 # @dp.message_handler(commands=['/Введение_классрум'])
 async def message_classroom (message: types.Message):
